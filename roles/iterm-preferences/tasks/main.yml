@@ -1,0 +1,46 @@
+---
+- include: variables.yml
+
+# On Sierra this requires ~/.pydistutils.cfg to be configured to
+# install libs to ~/Library/Python/$py_version_short/lib/python/site-packages
+- name: Install biplist
+  env:
+    PATH: /usr/bin:/bin:/usr/sbin:/sbin
+  easy_install: 
+    name: biplist
+
+- name: 'Preparing directory for iterm preferences'
+  file:
+    dest: "{{ iterm_preferences_path }}"
+    state: directory
+    owner: "{{ iterm_preferences_user }}"
+
+- name: Setting up custom preferences for iterm
+  plist_file:
+    dest: "{{ iterm_plist_file }}"
+    key: PrefsCustomFolder
+    value: "{{ iterm_preferences_path }}"
+  notify: 'restart cfprefsd'
+
+- name: Setting up custom preferences directory for iterm
+  plist_file:
+    dest: "{{ iterm_plist_file }}"
+    key: LoadPrefsFromCustomFolder
+    value: True
+  notify: 'restart cfprefsd'
+
+- name: Cloning preferences repo
+  git:
+    repo: "{{ iterm_preferences_repo }}"
+    dest: "{{ iterm_preferences_path }}"
+    update: True
+    force: True
+    accept_hostkey: True
+  notify: 'restart cfprefsd'
+
+- name: 'Setting correct permissions for iterm-preferences'
+  file:
+    path: "{{ iterm_preferences_path }}"
+    mode: "{{ iterm_preferences_dir_mode }}"
+    owner: "{{ iterm_preferences_user }}"
+    recurse: True

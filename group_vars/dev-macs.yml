@@ -1,0 +1,71 @@
+---
+bash_it_plugins:
+  - alias-completion
+  - rbenv
+  - ssh
+  - base
+  - history
+bash_it_completions:
+  - defaults
+  - git
+bash_it_aliases:
+  - general
+bash_it_theme: wanelo
+
+dotfiles_repo: "https://github.com/jfahrer/dotfiles"
+
+iterm_preferences_repo: https://github.com/jfahrer/iterm-preferences
+
+homebrew_taps:
+  - 'homebrew/completions'
+  - 'homebrew/services'
+  - 'thoughtbot/formulae'
+homebrew_apps:
+  - 'ack'
+  - 'ansible'
+  - 'bash-completion'
+  - 'ctags'
+  - 'giflib'
+  - 'git'
+  - 'htop'
+  - 'hub'
+  - 'imagemagick'
+  - 'lynx'
+  - 'mas'
+  - 'nmap'
+  - 'nodejs'
+  - 'p7zip'
+  - 'pcre'
+  - 'phantomjs'
+  - 'python'
+  - 'rcm'
+  - 'rbenv'
+  - 'the_silver_searcher'
+  - 'vim'
+  - 'watch'
+homebrew_install_options:
+  imagemagick: with-webp
+homebrew_cask_apps:
+  - '1password'
+  - 'firefox'
+  - 'gitx'
+  - 'google-chrome'
+  - 'google-drive'
+  - 'iterm2'
+  - 'shiftit'
+  - 'skype'
+  - 'slack'
+  - 'sublime-text'
+  - 'teamviewer'
+  - 'vmware-fusion'
+
+rbenv_rubies_ruby_versions:
+  - 2.3.1
+  - 2.2.3
+  - 2.1.7
+  - 2.1.5
+  - 2.1.2
+rbenv_rubies_global_ruby_version: 2.3.1
+rbenv_rubies_ruby_gems:
+  - 'bundler'
+  - 'irbtools'

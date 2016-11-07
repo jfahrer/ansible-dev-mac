@@ -1,0 +1,7 @@
+__vim_vundle_plugins_user: "{{ ansible_user_id }}"
+vim_vundle_plugins_repo: https://github.com/VundleVim/Vundle.vim.git
+vim_vundle_plugins_tmp_config: /tmp/vim_vundle_plugins_tmp_config
+vim_vundle_plugins_perform_update: True
+vim_vundle_plugins_perform_clean: True
+vim_vundle_plugins_mode: 0755
+vim_vundle_plugins_vim_binary: vim

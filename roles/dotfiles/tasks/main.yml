@@ -1,0 +1,42 @@
+---
+- include: variables.yml
+
+- name: 'Cloning dotfiles repo'
+  git:
+    repo: "{{ dotfiles_repo }}"
+    dest: "{{ dotfiles_path }}"
+    accept_hostkey: True
+    version: "{{ dotfiles_branch }}"
+    update: True
+    clone: True
+    force: True
+
+- name: 'Creating directory for local dotfiles'
+  file:
+    dest: "{{ dotfiles_local_path }}"
+    state: directory
+    owner: "{{ dotfiles_user }}"
+    mode: "{{ dotfiles_dir_mode }}"
+
+- name: 'Setting correct permissions for the dotfiles'
+  file:
+    path: "{{ dotfiles_path }}"
+    mode: "{{ dotfiles_dir_mode }}"
+    owner: "{{ dotfiles_user }}"
+    recurse: True
+
+- name: 'Register thoughtbot formulae'
+  homebrew_tap: 
+    tap: thoughtbot/formulae
+    state: present
+
+- name: 'Installing rcm'
+  homebrew: 
+    name: rcm
+    state: latest
+
+# rcup -vf -d ~/.dotfiles-local -d ~/.dotfiles    <-- first one wins
+- name: 'Linking dotfiles'
+  shell: "rcup -vf -d {{ dotfiles_local_path }} -d {{ dotfiles_path }} | { grep -v identical || true; }"
+  register: rcup_output
+  changed_when: rcup_output.stdout_lines|length > 0

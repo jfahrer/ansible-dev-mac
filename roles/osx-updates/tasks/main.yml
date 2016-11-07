@@ -1,0 +1,4 @@
+---
+- name: Installing OS X updates
+  shell: softwareupdate -i -a
+  when: "{{ osx_updates_perform_install }}"

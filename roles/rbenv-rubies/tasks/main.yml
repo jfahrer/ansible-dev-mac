@@ -1,0 +1,39 @@
+---
+- name: Looking for installed ruby versions
+  shell: eval "$(rbenv init -)"; rbenv versions | grep {{ item }}
+  register: installed_rbenv_ruby_versions
+  with_items: "{{ rbenv_rubies_ruby_versions }}"
+  changed_when: false
+  ignore_errors: yes
+
+- name: Installing missing rubies
+  shell: eval "$(rbenv init -)"; rbenv install {{ item.item }}
+  with_items: "{{ installed_rbenv_ruby_versions.results }}"
+  when: item.rc != 0
+
+- name: Registering global ruby versions
+  shell: eval "$(rbenv init -)"; rbenv global
+  register: rbenv_global_version
+  changed_when: false
+
+- name: Setting global ruby versions
+  shell: eval "$(rbenv init -)"; rbenv global {{ rbenv_rubies_global_ruby_version }}
+  when: rbenv_global_version.stdout != rbenv_rubies_global_ruby_version
+
+- include: gems.yml
+  with_items: "{{ rbenv_rubies_ruby_versions }}"
+  loop_control:
+    loop_var: ruby_version_for_gem_install
+
+- name: Rehashing rbenv
+  shell: eval "$(rbenv init -)"; rbenv rehash
+  changed_when: false
+
+- name: Setting up rbenv init
+  lineinfile: 
+    create: true
+    dest: "~/.bash_profile"
+    line: "{{ item }}"
+  with_items:
+    - 'eval "$(rbenv init -)"'
+    - 'PATH=./bin:$PATH'

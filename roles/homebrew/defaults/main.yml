@@ -1,0 +1,7 @@
+---
+homebrew_user: "{{ ansible_user_id }}"
+homebrew_apps: []
+homebrew_cask_apps: []
+homebrew_install_options: {}
+homebrew_taps: []
+homebrew_ignore_errors: False

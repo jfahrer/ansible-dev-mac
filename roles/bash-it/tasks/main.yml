@@ -1,0 +1,78 @@
+---
+- include: variables.yml
+
+- name: 'Cloning bash-it'
+  git:
+    repo: "{{ bash_it_repo }}"
+    dest: "{{ bash_it_path }}"
+    depth: 1
+    force: True
+    update: True
+
+- name: 'Creating required directories'
+  file: 
+    state: directory
+    dest: "{{ bash_it_path }}/{{ item }}"
+    owner: "{{ bash_it_user }}"    
+  with_items:
+    - plugins/enabled/
+    - completion/enabled/
+    - aliases/enabled/
+
+- name: 'Enabling plugins'
+  file:
+    state: link
+    src: "{{ bash_it_path }}/plugins/available/{{ item }}.plugin.bash"
+    dest: "{{ bash_it_path }}/plugins/enabled/{{ item }}.plugin.bash"
+    owner: "{{ bash_it_user }}"
+  with_items: "{{ bash_it_plugins }}"
+
+- name: 'Enabling completion'
+  file:
+    state: link
+    src: "{{ bash_it_path }}/completion/available/{{ item }}.completion.bash"
+    dest: "{{ bash_it_path }}/completion/enabled/{{ item }}.completion.bash"
+    owner: "{{ bash_it_user }}"
+  with_items: "{{ bash_it_completions }}"
+
+- name: 'Enabling aliases'
+  file:
+    state: link
+    src: "{{ bash_it_path }}/aliases/available/{{ item }}.aliases.bash"
+    dest: "{{ bash_it_path }}/aliases/enabled/{{ item }}.aliases.bash"
+    owner: "{{ bash_it_user }}"
+  with_items: "{{ bash_it_aliases }}"
+
+- name: 'Setting correct permissions for bash-it'
+  file:
+    path: "{{ bash_it_path }}"
+    mode: "{{ bash_it_dir_mode }}"
+    owner: "{{ bash_it_user }}"
+    recurse: True
+
+- name: 'Creating the bash_it_profile file'
+  template: 
+    src: bash_it_profile.j2
+    dest: "{{ bash_it_homedir }}/bash_it_profile"
+    owner: "{{ bash_it_user }}"
+
+- name: "Making sure that .bash_profile sources .bashrc"
+  blockinfile:
+    dest: "{{ bash_it_homedir }}/.bash_profile"
+    create: True
+    follow: True
+    owner: "{{ bash_it_user }}"
+    block: |
+      if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+      fi
+  when: bash_it_source_bashrc
+
+- name: 'Loading bash_it_profile from bash_profile'
+  lineinfile: 
+    create: True
+    follow: True    
+    owner: "{{ bash_it_user }}"    
+    dest: "{{ bash_it_homedir }}/.bash_profile"
+    line: ". ~/bash_it_profile"
+    regexp: ". ~/bash_it_profile"

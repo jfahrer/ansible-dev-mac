@@ -1,0 +1,57 @@
+---
+- include: variables.yml
+
+- name: Creating plugin directory
+  file:
+    state: directory
+    dest: "{{ vim_vundle_plugins_path }}"
+    owner: "{{ vim_vundle_plugins_user }}"
+    mode: "{{ vim_vundle_plugins_mode }}"
+
+- name: 'Cloning Vundle repo'
+  git:
+    repo: "{{ vim_vundle_plugins_repo }}"
+    dest: "{{ vim_vundle_plugins_path }}/Vundle.vim"
+    accept_hostkey: True
+    clone: True
+    force: True
+    update: False
+
+- name: Getting a list of plugins to install
+  shell: grep '^Plugin' "{{ vim_vundle_plugins_vimrc }}"
+  register: vim_vundle_plugins_list
+  changed_when: False
+
+- name: 'Creating temporary config to install plugins via Vundle'
+  template: 
+    src: vimrc.j2
+    dest: "{{ vim_vundle_plugins_tmp_config }}"
+    owner: "{{ vim_vundle_plugins_user }}"
+  changed_when: False
+
+- name: 'Installing vim plugins'
+  shell: >
+    {{ vim_vundle_plugins_vim_binary }} -u "{{ vim_vundle_plugins_tmp_config }}" -c "PluginInstall" -c quitall
+
+- name: 'Updating vim plugins'
+  shell: >
+    {{ vim_vundle_plugins_vim_binary }} -u "{{ vim_vundle_plugins_tmp_config }}" -c "PluginUpdate" -c quitall
+  when: "{{ vim_vundle_plugins_perform_update }}"
+
+- name: 'Cleaning up vim plugins'
+  shell: >
+    {{ vim_vundle_plugins_vim_binary }} -u "{{ vim_vundle_plugins_tmp_config }}" -c "PluginClean!" -c quitall
+  when: "{{ vim_vundle_plugins_perform_clean }}"
+
+- name: 'Setting correct permissions for the plugins'
+  file:
+    path: "{{ vim_vundle_plugins_path }}"
+    mode: "{{ vim_vundle_plugins_mode }}"
+    owner: "{{ vim_vundle_plugins_user }}"
+    recurse: True
+
+- name: 'Removing temporary config'
+  file:
+    dest: "{{ vim_vundle_plugins_tmp_config }}"
+    state: absent
+  changed_when: False    

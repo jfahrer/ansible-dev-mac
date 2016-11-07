@@ -1,0 +1,15 @@
+---
+- name: Setting user for dotfiles
+  set_fact:
+    dotfiles_user: "{{ __dotfiles_user }}"
+  when: dotfiles_user is not defined
+
+- name: Setting path for dotfiles
+  set_fact:
+    dotfiles_path: "/Users/{{ dotfiles_user }}/.dotfiles"
+  when: dotfiles_path is not defined
+
+- name: Setting path for local dotfiles
+  set_fact:
+    dotfiles_local_path: "/Users/{{ dotfiles_user }}/.dotfiles-local"
+  when: dotfiles_local_path is not defined

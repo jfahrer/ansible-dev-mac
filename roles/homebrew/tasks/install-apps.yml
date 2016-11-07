@@ -1,0 +1,9 @@
+---
+- name: Installing apps via brew
+  homebrew: 
+    name: "{{ item }}"
+    state: latest
+    install_options: "{{ homebrew_install_options[item] | default(omit) }}"
+  with_items: "{{ homebrew_apps }}"
+  become: False
+  ignore_errors: "{{ homebrew_ignore_errors }}"

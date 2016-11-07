@@ -1,0 +1,14 @@
+---
+__bash_it_user: "{{ ansible_user_id }}"
+bash_it_repo: "https://github.com/Bash-it/bash-it"
+bash_it_scm_check: "true"
+bash_it_scm_show_current_user: "true"
+bash_it_plugins:
+  - base
+bash_it_completions:
+  - defaults
+bash_it_aliases:
+  - general
+bash_it_theme: pure
+bash_it_source_bashrc: False
+bash_it_dir_mode: 0755

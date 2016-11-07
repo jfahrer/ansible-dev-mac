@@ -1,0 +1,16 @@
+---
+- name: 'Getting current names'
+  shell: scutil --get {{ item }}
+  register: current_hostnames
+  changed_when: False
+  with_items:
+    - ComputerName
+    - HostName
+    - LocalHostName
+  ignore_errors: True
+
+- name: 'Setting names'
+  shell: scutil --set {{ item.item }} {{ osx_hostname }}
+  with_items: "{{ current_hostnames.results }}"
+  when: item.stdout != osx_hostname
+  become: True

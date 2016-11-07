@@ -1,0 +1,4 @@
+__dotfiles_user: "{{ ansible_user_id }}"
+dotfiles_repo: "https://github.com/jfahrer/dotfiles"
+dotfiles_branch: master
+dotfiles_dir_mode: 0700

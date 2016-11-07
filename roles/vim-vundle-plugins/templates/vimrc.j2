@@ -1,0 +1,10 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" Set the runtime path to include Vundle and initialize
+set rtp+={{ vim_vundle_plugins_path }}/Vundle.vim/
+call vundle#begin('{{ vim_vundle_plugins_path }}')
+
+{{ vim_vundle_plugins_list.stdout }}
+
+call vundle#end()

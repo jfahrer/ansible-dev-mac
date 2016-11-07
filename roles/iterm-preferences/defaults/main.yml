@@ -1,0 +1,4 @@
+---
+__iterm_preferences_user: "{{ ansible_user_id }}"
+iterm_preferences_repo: "https://github.com/jfahrer/iterm-preferences"
+iterm_preferences_dir_mode: 0755

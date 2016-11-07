@@ -1,0 +1,45 @@
+---
+- name: Making sure Homebrew directory exists
+  file: 
+    path: "{{ item }}"
+    state: directory
+    mode: 0755
+    owner: "{{ homebrew_user }}"
+    group: staff
+    recurse: False
+  become: True
+  with_items:
+    - /usr/local/bin
+    - /usr/local/Homebrew
+
+- name: Installing Homebrew with git
+  git:
+    repo: https://github.com/Homebrew/homebrew.git
+    dest: /usr/local/Homebrew
+    version: master
+    force: True
+    clone: True
+    update: False
+  become: False
+
+- name: Setting correct owner for the Homebrew directory
+  file: 
+    path: /usr/local/Homebrew
+    state: directory
+    mode: 0755
+    owner: "{{ homebrew_user }}"
+    group: staff
+    recurse: True
+  become: True
+
+- name: Creating symlink for brew
+  file:
+    src: ../Homebrew/bin/brew
+    dest: /usr/local/bin/brew
+    state: link
+    force: True
+  become: True
+
+- name: Updating Homebrew
+  homebrew: update_homebrew=yes
+  become: False

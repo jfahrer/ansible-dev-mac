@@ -1,0 +1,12 @@
+---
+- name: Tapping caskroom/cask
+  homebrew_tap:
+    tap: caskroom/cask
+
+- name: Tapping cask/versions
+  homebrew_tap: 
+    tap: caskroom/versions
+
+- name: Updating Homebrew & Homebrew Cask
+  homebrew: 
+    update_homebrew: yes
