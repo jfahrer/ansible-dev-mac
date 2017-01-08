@@ -4,11 +4,12 @@ export BASH_IT="{{ bash_it_path }}"
 # Lock and Load a custom theme file
 export BASH_IT_THEME="{{ bash_it_theme }}"
 
-# Set this to false to turn off version control status checking within the prompt for all themes
-export SCM_CHECK={{ bash_it_scm_check }}
-SCM_GIT_SHOW_CURRENT_USER={{ bash_it_scm_show_current_user }}
-
 # Load Bash It
 if [ -f $BASH_IT/bash_it.sh ]; then
   source $BASH_IT/bash_it.sh
 fi
+
+# Set this to false to turn off version control status checking within the prompt for all themes
+export SCM_CHECK={{ bash_it_scm_check }}
+export SCM_GIT_SHOW_CURRENT_USER={{ bash_it_scm_show_current_user }}
+export SCM_THEME_CURRENT_USER_PREFFIX='{{ bash_it_scm_current_user_prefix }}'

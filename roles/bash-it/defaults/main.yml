@@ -12,3 +12,4 @@ bash_it_aliases:
 bash_it_theme: pure
 bash_it_source_bashrc: False
 bash_it_dir_mode: 0755
+bash_it_scm_current_user_prefix: ' '
