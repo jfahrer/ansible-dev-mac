@@ -8,7 +8,7 @@
     name: "{{ item }}"
     state: latest
     user_install: no
-    executable: ~/.rbenv/shims/gem
+    executable: "{{ rbenv_rubies_root }}/shims/gem"
   with_items: "{{ rbenv_rubies_ruby_gems }}"
 
 - name: Unsetting local ruby version

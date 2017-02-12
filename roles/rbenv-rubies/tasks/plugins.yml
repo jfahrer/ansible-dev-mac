@@ -1,0 +1,15 @@
+---
+- name: Creating directory for plugins
+  file:
+    dest: "{{ rbenv_rubies_root }}/plugins"
+    state: directory
+
+- name: Installing plugins
+  git:
+    repo: "{{ item.repo }}"
+    dest: "{{ rbenv_rubies_root }}/plugins/{{ item.name }}"
+    accept_hostkey: True
+    update: True
+    clone: True
+    force: True
+  with_items: "{{ rbenv_rubies_plugins }}"

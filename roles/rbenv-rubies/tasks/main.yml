@@ -1,4 +1,8 @@
 ---
+- include: variables.yml
+
+- include: plugins.yml
+
 - name: Looking for installed ruby versions
   shell: eval "$(rbenv init -)"; rbenv versions | grep {{ item }}
   register: installed_rbenv_ruby_versions

@@ -1,0 +1,10 @@
+---
+- name: Registering the root dir for rbenv
+  shell: 'rbenv root'
+  register: rbenv_rubies_root_output
+  when: rbenv_rubies_root is not defined
+
+- name: Registering the root dir for rbenv
+  set_fact:
+    rbenv_rubies_root: "{{ rbenv_rubies_root_output.stdout_lines[0] }}"
+  when: rbenv_rubies_root is not defined
