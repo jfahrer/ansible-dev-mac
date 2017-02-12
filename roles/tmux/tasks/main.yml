@@ -1,0 +1,16 @@
+---
+- name: 'Installing tmux'
+  homebrew:
+    name: tmux
+
+- name: 'Installting required packages'
+  homebrew:
+    name: "{{ item }}"
+  with_items:
+    - reattach-to-user-namespace
+    - fzf
+
+- name: Installing tat script
+  template: 
+    src: tat.j2
+    dest: /usr/local/bin/tat
