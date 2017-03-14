@@ -16,8 +16,8 @@
     - role: bash-it
     - role: git-pair
     - role: iterm-preferences
+    - role: tmux
     - role: rbenv-rubies
     - role: vim-vundle-plugins
     - role: osx-updates
-      become: True    
-    
+      become: True
