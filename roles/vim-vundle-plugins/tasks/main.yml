@@ -36,12 +36,12 @@
 - name: 'Updating vim plugins'
   shell: >
     {{ vim_vundle_plugins_vim_binary }} -u "{{ vim_vundle_plugins_tmp_config }}" -c "PluginUpdate" -c quitall
-  when: "{{ vim_vundle_plugins_perform_update }}"
+  when: vim_vundle_plugins_perform_update
 
 - name: 'Cleaning up vim plugins'
   shell: >
     {{ vim_vundle_plugins_vim_binary }} -u "{{ vim_vundle_plugins_tmp_config }}" -c "PluginClean!" -c quitall
-  when: "{{ vim_vundle_plugins_perform_clean }}"
+  when: vim_vundle_plugins_perform_clean
 
 - name: 'Setting correct permissions for the plugins'
   file:
@@ -54,4 +54,4 @@
   file:
     dest: "{{ vim_vundle_plugins_tmp_config }}"
     state: absent
-  changed_when: False    
+  changed_when: False
