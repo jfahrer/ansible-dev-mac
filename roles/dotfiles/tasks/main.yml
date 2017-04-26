@@ -21,7 +21,6 @@
 - name: 'Setting correct permissions for the dotfiles'
   file:
     path: "{{ dotfiles_path }}"
-    mode: "{{ dotfiles_dir_mode }}"
     owner: "{{ dotfiles_user }}"
     recurse: True
 
