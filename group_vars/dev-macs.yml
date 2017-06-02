@@ -69,8 +69,10 @@ rbenv_rubies_ruby_versions:
   - 2.1.2
 rbenv_rubies_global_ruby_version: 2.3.1
 rbenv_rubies_ruby_gems:
+  - 'gem-ctags'
   - 'bundler'
   - 'irbtools'
-  - 'gem-ctags'
+  - 'awesome_print'
+  - 'activesupport'
 rbenv_rubies_plugins:
  - { name: 'rbenv-ctags', repo: 'https://github.com/tpope/rbenv-ctags' }
