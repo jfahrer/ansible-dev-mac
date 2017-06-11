@@ -48,6 +48,8 @@ homebrew_install_options:
   imagemagick: with-webp
 homebrew_cask_apps:
   - '1password'
+  - 'alfred'
+  - 'dash'
   - 'firefox'
   - 'gitx'
   - 'google-chrome'
