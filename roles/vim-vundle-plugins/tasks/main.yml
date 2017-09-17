@@ -49,6 +49,7 @@
     mode: "{{ vim_vundle_plugins_mode }}"
     owner: "{{ vim_vundle_plugins_user }}"
     recurse: True
+  become: True
 
 - name: 'Removing temporary config'
   file:

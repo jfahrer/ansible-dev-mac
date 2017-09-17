@@ -13,7 +13,7 @@
   file: 
     state: directory
     dest: "{{ bash_it_path }}/{{ item }}"
-    owner: "{{ bash_it_user }}"    
+    owner: "{{ bash_it_user }}"
   with_items:
     - plugins/enabled/
     - completion/enabled/
@@ -53,7 +53,7 @@
 - name: 'Creating the bash_it_profile file'
   template: 
     src: bash_it_profile.j2
-    dest: "{{ bash_it_homedir }}/bash_it_profile"
+    dest: "{{ bash_it_homedir }}/.bash_it_profile"
     owner: "{{ bash_it_user }}"
 
 - name: "Making sure that .bash_profile sources .bashrc"
