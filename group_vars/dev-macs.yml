@@ -25,6 +25,7 @@ homebrew_apps:
   - 'ansible'
   - 'bash-completion'
   - 'ctags'
+  - 'cmake'
   - 'docker'
   - 'docker-compose'
   - 'docker-machine'
@@ -42,6 +43,7 @@ homebrew_apps:
   - 'rcm'
   - 'rbenv'
   - 'the_silver_searcher'
+  - 'tree'
   - 'vim'
   - 'watch'
 homebrew_install_options:
