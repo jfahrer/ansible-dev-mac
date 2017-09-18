@@ -3,7 +3,7 @@
   homebrew:
     name: tmux
 
-- name: 'Installting required packages'
+- name: 'Installing required packages'
   homebrew:
     name: "{{ item }}"
   with_items:
@@ -11,6 +11,6 @@
     - fzf
 
 - name: Installing tat script
-  template: 
+  template:
     src: tat.j2
     dest: /usr/local/bin/tat

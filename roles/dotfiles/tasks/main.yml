@@ -25,12 +25,12 @@
     recurse: True
 
 - name: 'Register thoughtbot formulae'
-  homebrew_tap: 
+  homebrew_tap:
     tap: thoughtbot/formulae
     state: present
 
 - name: 'Installing rcm'
-  homebrew: 
+  homebrew:
     name: rcm
     state: latest
 
