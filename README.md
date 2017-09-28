@@ -25,7 +25,6 @@ echo WHATEVER_THE_PASSWORD_IS > ./vault_pass.txt
 # Manual steps
 * Add alfred workflows
   * github (https://github.com/gharlan/alfred-github-workflow/releases)
-  * docker (https://github.com/keithamus/alfred-docker-wizard)
   * stack overflow (https://github.com/deanishe/alfred-stackoverflow)
   * dash (via the integrations)
 * Download dash docsets
