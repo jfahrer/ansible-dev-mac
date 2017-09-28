@@ -1,5 +1,5 @@
 # dev-mac
-This project uses ansible to create a ready-to-code OS X box (tested with El Capitan)!
+This project uses ansible to create a ready-to-code OS X box (tested with Sierra)!
 
 # Setting up a new machine
 * Install XCode
@@ -22,15 +22,28 @@ cd dev-mac
 echo WHATEVER_THE_PASSWORD_IS > ./vault_pass.txt
 ```
 
-# TODO
-* Setup the development user
-* Setup postgres
+# Manual steps
+* Add alfred workflows
+  * github (https://github.com/gharlan/alfred-github-workflow/releases)
+  * docker (https://github.com/keithamus/alfred-docker-wizard)
+  * stack overflow (https://github.com/deanishe/alfred-stackoverflow)
+  * dash (via the integrations)
+* Download dash docsets
+  * docker
+  * ansible
+  * rails
+  * ruby
+  * rspec expectations cheatsheet
+* Setup 1password
 
 ## git-pir
 We should make sure that /usr/local/bin exist and is writeable
 
-## iterm-preferences
-Add params to installl biplist
- - Don't install
- - use pip / easy_install
- - become or don't become
+
+# TODO
+* Setup the development user
+  * github keys
+* Setup postgres
+* Move git-pair wrapper into the dotfiles
+* fix iterm-preferences
+* mouse repeat rate
