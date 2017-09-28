@@ -60,6 +60,7 @@ homebrew_cask_apps:
   - 'shiftit'
   - 'skype'
   - 'slack'
+  - 'seafile-client'
   - 'sublime-text'
   - 'teamviewer'
   - 'vmware-fusion'
