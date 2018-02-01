@@ -1,4 +1,7 @@
 ---
+ansible_connection: local
+ansible_python_interpreter: /usr/local/opt/python/libexec/bin/python
+
 bash_it_plugins:
   - alias-completion
   - rbenv
