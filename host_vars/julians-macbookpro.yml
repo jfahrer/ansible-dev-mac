@@ -1,3 +1,1 @@
-ansible_connection: local
 osx_hostname: julians-macbookpro
-ansible_python_interpreter: /usr/local/opt/python/libexec/bin/python
