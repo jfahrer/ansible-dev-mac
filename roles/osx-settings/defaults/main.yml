@@ -1,7 +1,0 @@
----
-settings:
-  # Disable guest user
-  - domain: com.apple.AppleFileServer
-    key: guestAccess
-    type: bool
-    value: false
