@@ -2,9 +2,6 @@
 - name: 'Setup OS X'
   hosts: dev-macs
   environment:
-    # OS X doesn't have /usr/local/(s)bin in PATH so we have to set the path manually
-    # As an alternative we could create ~/.bashrc as an initial step 
-    # and set $PATH from there. ~/.bashrc is picked up by ansible
     PATH: /usr/local/opt/python/libexec/bin:/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
   roles:
     - role: osx-hostname
