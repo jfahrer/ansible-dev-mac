@@ -1,5 +1,5 @@
 ---
-- include: variables.yml
+- import_tasks: variables.yml
 
 - name: 'Ensure the dotfiles repo is cloned and uptodate'
   git:

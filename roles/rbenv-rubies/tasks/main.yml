@@ -1,7 +1,7 @@
 ---
-- include: variables.yml
+- import_tasks: variables.yml
 
-- include: plugins.yml
+- import_tasks: plugins.yml
 
 - name: Get installed ruby versions
   shell: eval "$(rbenv init -)"; rbenv versions | grep {{ item }}
@@ -24,7 +24,7 @@
   shell: eval "$(rbenv init -)"; rbenv global {{ rbenv_rubies_global_ruby_version }}
   when: rbenv_global_version.stdout != rbenv_rubies_global_ruby_version
 
-- include: gems.yml
+- include_tasks: gems.yml
   with_items: "{{ rbenv_rubies_ruby_versions }}"
   loop_control:
     loop_var: ruby_version_for_gem_install
