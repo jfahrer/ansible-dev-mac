@@ -36,18 +36,14 @@ homebrew_apps:
   - 'lynx'
   - 'mas'
   - 'nmap'
-  - 'nodejs'
   - 'p7zip'
   - 'pcre'
-  - 'python'
   - 'rcm'
   - 'rbenv'
   - 'the_silver_searcher'
   - 'tree'
   - 'vim'
   - 'watch'
-homebrew_install_options:
-  imagemagick: with-webp
 homebrew_cask_apps:
   - '1password'
   - 'alfred'
@@ -56,7 +52,7 @@ homebrew_cask_apps:
   - 'firefox'
   - 'gitx'
   - 'google-chrome'
-  - 'google-drive'
+  - 'google-drive-file-stream'
   - 'iterm2'
   - 'shiftit'
   - 'skype'
