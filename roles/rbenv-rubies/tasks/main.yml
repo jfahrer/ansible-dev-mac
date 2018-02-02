@@ -37,7 +37,4 @@
   lineinfile:
     create: true
     dest: "~/.bash_profile"
-    line: "{{ item }}"
-  with_items:
-    - 'eval "$(rbenv init -)"'
-    - 'PATH=./bin:$PATH'
+    line: 'eval "$(rbenv init -)"'
