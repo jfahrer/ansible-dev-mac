@@ -1,0 +1,31 @@
+---
+- name: Ensure the development user is set
+  set_fact:
+    development_user: "{{ __development_user }}"
+  when: development_user is not defined
+
+- name: Ensure that the homedir for the user is set
+  set_fact:
+    development_user_home_dir: "/Users/{{ development_user }}"
+
+- name: Create an ssh key for the development user
+  user:
+    name: "{{ development_user }}"
+    generate_ssh_key: yes
+
+- name: Ensure that the workspace directory exists
+  file:
+    state: directory
+    dest: "{{ development_user_home_dir }}/workspace"
+    owner: "{{ development_user }}"
+
+- name: Read SSH public key to authorize
+  shell: "cat {{ development_user_home_dir }}/.ssh/id_rsa.pub"
+  register: ssh_pub_key
+
+- name: Authorize the user's to access GitHub
+  github_key:
+    name: "Access key for {{ development_user }}@{{ ansible_hostname }}"
+    force: yes
+    token: "{{ github_ssh_key_management_token }}"
+    pubkey: "{{ ssh_pub_key.stdout }}"
