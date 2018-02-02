@@ -20,7 +20,6 @@ dotfiles_repo: "https://github.com/jfahrer/dotfiles"
 iterm_preferences_repo: https://github.com/jfahrer/iterm-preferences
 
 homebrew_taps:
-  - 'homebrew/completions'
   - 'homebrew/services'
   - 'thoughtbot/formulae'
 homebrew_apps:
@@ -34,7 +33,6 @@ homebrew_apps:
   - 'docker-completion'
   - 'docker-credential-helper'
   - 'git'
-  - 'htop'
   - 'hub'
   - 'lynx'
   - 'mas'
