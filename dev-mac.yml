@@ -1,13 +1,15 @@
 ---
-- name: 'Setup OS X'
+- name: 'Setup macOS'
   hosts: dev-macs
   environment:
     PATH: /usr/local/opt/python/libexec/bin:/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+  vars_files:
+    - ../ansible-dev-mac-credentials/github.yml
   roles:
     - role: osx-hostname
+    - role: development-user
     - role: osx-settings
       become: True
-    - role: elliotweiser.osx-command-line-tools
     - role: homebrew
     - role: homebrew-openssl
     - role: dotfiles
