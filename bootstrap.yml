@@ -1,0 +1,12 @@
+---
+- name: 'Bootstraping a new box'
+  vars_files:
+    - ../ansible-dev-mac-credentials/github.yml
+  hosts: host-to-bootstrap
+  roles:
+    - role: osx-hostname
+      become: yes
+    - role: development-user
+    - role: elliotweiser.osx-command-line-tools
+    - role: ansible-repos
+    - role: homebrew

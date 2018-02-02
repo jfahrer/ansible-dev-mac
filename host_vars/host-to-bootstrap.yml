@@ -1,0 +1,7 @@
+---
+ansible_host: "{{ bootstrap_ip }}"
+ansible_ssh_user: "{{ bootstrap_user }}"
+
+homebrew_apps:
+  - ansible
+  - python
