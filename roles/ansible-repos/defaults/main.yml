@@ -1,0 +1,3 @@
+---
+ansible_repos_credential_repo_url: ssh://git@github.com/jfahrer/ansible-dev-mac-credentials.git
+ansible_repos_main_repo_url: https://github.com/jfahrer/ansible-dev-mac.git
