@@ -36,6 +36,7 @@ This will install Xcode, Homebrew and Ansible on a blank machine. It also genera
 * Show remaining battery in %
 * Set modifier key for caps to control
 * Increase key repeat rate and delay
+* Remove the shortcuts C-up/down/left/right that are mapped to Mission Control
 * Add alfred workflows
   * github (https://github.com/gharlan/alfred-github-workflow/releases)
   * stack overflow (https://github.com/deanishe/alfred-stackoverflow)
