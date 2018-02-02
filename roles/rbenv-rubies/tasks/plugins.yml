@@ -1,10 +1,10 @@
 ---
-- name: Creating directory for plugins
+- name: Ensure the directory for plugins exists
   file:
     dest: "{{ rbenv_rubies_root }}/plugins"
     state: directory
 
-- name: Installing plugins
+- name: Ensure required plugins are installed
   git:
     repo: "{{ item.repo }}"
     dest: "{{ rbenv_rubies_root }}/plugins/{{ item.name }}"

@@ -1,55 +1,55 @@
 ---
-- name : Disabling guest users
+- name : Disable guest users
   osx_defaults:
     domain: com.apple.AppleFileServer
     key: guestAccess
     value: False
 
-- name: Setting function-keys-work-as-function keys
+- name: Set function-keys-work-as-function keys
   osx_defaults:
     domain: .GlobalPreferences
     key: com.apple.keyboard.fnState
     type: bool
     value: True
 
-- name: Setting key repeat rate
+- name: Set the key repeat rate
   osx_defaults:
     domain: .GlobalPreferences
     key: KeyRepeat
     value: 1 # Lower ist faster
 
-- name: Setting showInputMenu
+- name: Set showInputMenu
   osx_defaults:
     domain: /Library/Preferences/com.apple.loginwindow
     key: showInputMenu
     value: True
 
-- name: Enabling full keyboard access for all controls
+- name: Set full keyboard access for all controls
   osx_defaults:
     domain: NSGlobalDomain
     key: AppleKeyboardUIMode
     value: 3
     type: int
 
-- name: Setting ask for password when screen is locked
+- name: Ask for password when screen is locked
   osx_defaults:
     domain: com.apple.screensaver
     key: askForPassword
     value: 1
 
-- name: Setting a wait time of 120 seconds between screensaver & lock
+- name: Wait 120 seconds between screensaver & lock
   osx_defaults:
     domain: com.apple.screensaver
     key: askForPasswordDelay
     value: 120.0
 
-- name: Setting up TimeMachine to NOT ask to use every new disk
+- name: Configure TimeMachine to NOT ask to use every new disk
   osx_defaults:
     domain: com.apple.TimeMachine
     key: DoNotOfferNewDisksForBackup
     value: True
 
-- name: Turning on date & seconds for menubar clock
+- name: Turn on date & seconds for menubar clock
   osx_defaults:
     domain: com.apple.menuextra.clock
     key: DateFormat

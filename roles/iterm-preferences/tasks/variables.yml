@@ -1,15 +1,15 @@
 ---
-- name: Setting user for iterm-preferences
+- name: Ensure the user for iterm-preferences is set
   set_fact:
     iterm_preferences_user: "{{ __iterm_preferences_user }}"
   when: iterm_preferences_user is not defined
 
-- name: Setting path for iterm-preferences
+- name: Ensure that path for iterm-preferences is set
   set_fact:
     iterm_preferences_path: "/Users/{{ iterm_preferences_user }}/.iterm-preferences"
   when: iterm_preferences_path is not defined
 
-- name: Setting plist file for iterm-preferences
+- name: Ensure the plist file for iterm-preferences is set
   set_fact:
     iterm_plist_file: "/Users/{{ iterm_preferences_user }}/Library/Preferences/com.googlecode.iterm2.plist"
   when: iterm_plist_file is not defined

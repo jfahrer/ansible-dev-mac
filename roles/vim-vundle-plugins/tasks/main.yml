@@ -1,14 +1,14 @@
 ---
 - include: variables.yml
 
-- name: Creating plugin directory
+- name: Ensure the directory for the plugins exists
   file:
     state: directory
     dest: "{{ vim_vundle_plugins_path }}"
     owner: "{{ vim_vundle_plugins_user }}"
     mode: "{{ vim_vundle_plugins_mode }}"
 
-- name: 'Cloning Vundle repo'
+- name: Ensure vundle is installed and up to date
   git:
     repo: "{{ vim_vundle_plugins_repo }}"
     dest: "{{ vim_vundle_plugins_path }}/Vundle.vim"
@@ -17,33 +17,33 @@
     force: True
     update: False
 
-- name: Getting a list of plugins to install
+- name: Extract the list of plugins
   shell: grep '^Plugin' "{{ vim_vundle_plugins_vimrc }}"
   register: vim_vundle_plugins_list
   changed_when: False
 
-- name: 'Creating temporary config to install plugins via Vundle'
-  template: 
+- name: Dump plugins into a temporary config
+  template:
     src: vimrc.j2
     dest: "{{ vim_vundle_plugins_tmp_config }}"
     owner: "{{ vim_vundle_plugins_user }}"
   changed_when: False
 
-- name: 'Installing vim plugins'
+- name: Ensure all plugins are installed
   shell: >
     {{ vim_vundle_plugins_vim_binary }} -u "{{ vim_vundle_plugins_tmp_config }}" -c "PluginInstall" -c quitall
 
-- name: 'Updating vim plugins'
+- name: Ensure all plugins are up to date
   shell: >
     {{ vim_vundle_plugins_vim_binary }} -u "{{ vim_vundle_plugins_tmp_config }}" -c "PluginUpdate" -c quitall
   when: vim_vundle_plugins_perform_update
 
-- name: 'Cleaning up vim plugins'
+- name: Ensure that old plugins are removed
   shell: >
     {{ vim_vundle_plugins_vim_binary }} -u "{{ vim_vundle_plugins_tmp_config }}" -c "PluginClean!" -c quitall
   when: vim_vundle_plugins_perform_clean
 
-- name: 'Setting correct permissions for the plugins'
+- name: Ensure correct permissions for the plugins
   file:
     path: "{{ vim_vundle_plugins_path }}"
     mode: "{{ vim_vundle_plugins_mode }}"
@@ -51,7 +51,7 @@
     recurse: True
   become: True
 
-- name: 'Removing temporary config'
+- name: Delete the temporary config
   file:
     dest: "{{ vim_vundle_plugins_tmp_config }}"
     state: absent

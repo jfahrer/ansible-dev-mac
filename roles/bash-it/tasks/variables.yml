@@ -1,15 +1,15 @@
 ---
-- name: Setting user for bash-it
+- name: Ensure the user for bash-it is set
   set_fact:
     bash_it_user: "{{ __bash_it_user }}"
   when: bash_it_user is not defined
 
-- name: Setting path for bash-it
+- name: Ensure the homedir for bash-it is set
   set_fact:
     bash_it_homedir: "/Users/{{ bash_it_user }}"
   when: bash_it_homedir is not defined
 
-- name: Setting path for bash-it
+- name: Ensure the path for bash-it is set
   set_fact:
     bash_it_path: "{{ bash_it_homedir }}/.bash-it"
   when: bash_it_path is not defined

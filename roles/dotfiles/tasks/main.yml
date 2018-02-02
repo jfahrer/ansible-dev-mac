@@ -1,7 +1,7 @@
 ---
 - include: variables.yml
 
-- name: 'Cloning dotfiles repo'
+- name: 'Ensure the dotfiles repo is cloned and uptodate'
   git:
     repo: "{{ dotfiles_repo }}"
     dest: "{{ dotfiles_path }}"
@@ -11,14 +11,14 @@
     clone: True
     force: True
 
-- name: 'Creating directory for local dotfiles'
+- name: 'Ensure the directory for local dotfiles exists'
   file:
     dest: "{{ dotfiles_local_path }}"
     state: directory
     owner: "{{ dotfiles_user }}"
     mode: "{{ dotfiles_dir_mode }}"
 
-- name: 'Setting correct permissions for the dotfiles'
+- name: 'Ensure correct permissions for the dotfiles'
   file:
     path: "{{ dotfiles_path }}"
     owner: "{{ dotfiles_user }}"
@@ -29,13 +29,13 @@
     tap: thoughtbot/formulae
     state: present
 
-- name: 'Installing rcm'
+- name: 'Ensure rcm is installed'
   homebrew:
     name: rcm
     state: latest
 
 # rcup -vf -d ~/.dotfiles-local -d ~/.dotfiles    <-- first one wins
-- name: 'Linking dotfiles'
+- name: 'Ensure that the dotfiles are linked'
   shell: "rcup -vf -d {{ dotfiles_local_path }} -d {{ dotfiles_path }} | { grep -v identical || true; }"
   register: rcup_output
   changed_when: rcup_output.stdout_lines|length > 0

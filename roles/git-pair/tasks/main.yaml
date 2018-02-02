@@ -1,10 +1,10 @@
 ---
-- name: 'Installing git pair'
+- name: 'Install git pair'
   shell: 'cd /usr/local/bin && curl -L http://github.com/pivotal/git_scripts/tarball/master | gunzip | tar xvf - --strip=2'
   args:
     creates: /usr/local/bin/git-pair
 
-- name: 'Installing git-pair wrapper'
+- name: 'Install the git-pair wrapper'
   template:
     src: git.j2
     dest: '/usr/local/sbin/git'

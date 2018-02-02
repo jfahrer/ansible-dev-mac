@@ -1,16 +1,16 @@
 ---
-- name: 'Installing tmux'
+- name: Ensure tmux is installed
   homebrew:
     name: tmux
 
-- name: 'Installing required packages'
+- name: Ensure dependencies for tmux are installed
   homebrew:
     name: "{{ item }}"
   with_items:
     - reattach-to-user-namespace
     - fzf
 
-- name: Installing tat script
+- name: Ensure the tat script is installed
   template:
     src: tat.j2
     dest: /usr/local/bin/tat

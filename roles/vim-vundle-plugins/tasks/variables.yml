@@ -1,15 +1,15 @@
 ---
-- name: Setting user for Vundle
+- name: Ensure the user for Vundle is set
   set_fact:
     vim_vundle_plugins_user: "{{ __vim_vundle_plugins_user }}"
   when: vim_vundle_plugins_user is not defined
 
-- name: Setting plugin path for Vundle
+- name: Ensure plugin path for Vundle is set
   set_fact:
     vim_vundle_plugins_path: "/Users/{{ vim_vundle_plugins_user }}/.vim/bundle"
   when: vim_vundle_plugins_path is not defined
 
-- name: Setting path to vimrc
+- name: Ensure the path to the vimrc is set
   set_fact:
     vim_vundle_plugins_vimrc: "/Users/{{ vim_vundle_plugins_user }}/.vimrc"
   when: vim_vundle_plugins_vimrc is not defined  
