@@ -2,4 +2,4 @@
 *.retry
 *.swp
 *.retry
-vault_pass.txt
+vault_password.txt
