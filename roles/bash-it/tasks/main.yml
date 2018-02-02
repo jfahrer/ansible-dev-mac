@@ -50,7 +50,7 @@
     owner: "{{ bash_it_user }}"
     recurse: True
 
-- name: 'Ensure the bash_it_profile file exists'
+- name: 'Ensure the .bash_it_profile file exists'
   template:
     src: bash_it_profile.j2
     dest: "{{ bash_it_homedir }}/.bash_it_profile"
@@ -74,5 +74,5 @@
     follow: True
     owner: "{{ bash_it_user }}"
     dest: "{{ bash_it_homedir }}/.bash_profile"
-    line: ". ~/bash_it_profile"
-    regexp: ". ~/bash_it_profile"
+    line: ". ~/.bash_it_profile"
+    regexp: ". ~/.bash_it_profile"
