@@ -10,9 +10,17 @@
   become: yes
   with_items:
     - /usr/local/bin
+    - /usr/local/sbin
     - /usr/local/Homebrew
     - /usr/local/var
     - /usr/local/var/homebrew
+    - /usr/local/Cellar
+    - /usr/local/Frameworks
+    - /usr/local/opt
+    - /usr/local/etc
+    - /usr/local/share
+    - /usr/local/lib
+    - /usr/local/include
 
 - name: Install Homebrew via git
   git:
