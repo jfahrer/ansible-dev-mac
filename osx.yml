@@ -10,6 +10,7 @@
     - role: osx-hostname
     - role: osx-settings
       become: True
+    - role: elliotweiser.osx-command-line-tools
     - role: homebrew
     - role: homebrew-openssl
     - role: dotfiles
