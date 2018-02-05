@@ -16,6 +16,8 @@ ansible-playbook -k -K -e "bootstrap_ip=10.0.1.24 bootstrap_user=julian osx_host
 ```
 This will install Xcode, Homebrew and Ansible on a blank machine. It also generates ssh keys, clones the repos and copies the vault key over to the machine.
 
+You can override the credentials repo with `-e "ansible_repos_credential_repo_url=ssh://git@github.com/jfahrer/ansible-dev-mac-credentials.git"`
+
 ### Manually setting up a new machine
 * Install Homebrew
   `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
