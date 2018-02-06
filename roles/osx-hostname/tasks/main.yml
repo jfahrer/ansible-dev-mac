@@ -1,4 +1,9 @@
 ---
+- name: Ensure the osx_hostname is set
+  set_fact:
+    osx_hostname: "{{ inventory_hostname }}"
+  when: osx_hostname is not defined
+
 - name: Load current hostname
   shell: scutil --get {{ item }}
   register: current_hostnames
