@@ -1,0 +1,17 @@
+---
+- name: 'Ensure the path for the secrets repo is set'
+  set_fact:
+    ansible_secrets_path: "{{ workspace }}/ansible-dev-mac-secrets"
+  when: ansible_secrets_path is not defined
+
+- name: 'Ensure the secrets repo is cloned'
+  git:
+    repo: "{{ ansible_secrets_repo }}"
+    dest: "{{ ansible_secrets_path }}"
+    force: no
+    update: yes
+    accept_hostkey: yes
+
+- name: 'Ensure that secrets are loaded'
+  include_vars:
+    dir: "{{ ansible_secrets_path }}/vars"

@@ -1,0 +1,24 @@
+---
+- name: 'Ensure the path for the main repo is set'
+  set_fact:
+    ansible_dev_mac_repo_path: "{{ workspace }}/ansible-dev-mac"
+  when: ansible_dev_mac_repo_path is not defined
+
+- name: 'Ensure the dev-mac repo is cloned'
+  git:
+    repo: "{{ ansible_dev_mac_repo_url }}"
+    dest: "{{ ansible_dev_mac_repo_path }}"
+    force: no
+    update: no
+
+- name: Ensure that the vault password file is set
+  set_fact:
+    ansible_dev_mac_repo_password_file: "{{ playbook_dir }}/vault_password.txt"
+  when: ansible_dev_mac_repo_password_file is not defined
+
+- name: 'Ensure that the vault password file exists'
+  copy:
+    src: "{{ ansible_dev_mac_repo_password_file }}"
+    dest: "{{ ansible_dev_mac_repo_path }}/vault_password.txt"
+    owner: "{{ ansible_user_id }}"
+    mode: 0400
