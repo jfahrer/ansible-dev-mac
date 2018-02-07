@@ -15,10 +15,6 @@ bash_it_aliases:
   - general
 bash_it_theme: wanelo
 
-dotfiles_repo: "https://github.com/jfahrer/dotfiles"
-
-iterm_preferences_repo: https://github.com/jfahrer/iterm-preferences
-
 homebrew_taps:
   - 'homebrew/services'
   - 'thoughtbot/formulae'
