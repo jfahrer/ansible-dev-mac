@@ -3,21 +3,20 @@
   hosts: dev-macs
   environment:
     PATH: /usr/local/opt/python/libexec/bin:/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-  vars_files:
-    - ../ansible-dev-mac-credentials/github.yml
   roles:
-    - role: osx-hostname
-    - role: development-user
-    - role: osx-settings
-      become: True
-    - role: homebrew
-    - role: homebrew-openssl
-    - role: dotfiles
-    - role: bash-it
-    - role: git-pair
-    - role: iterm-preferences
-    - role: tmux
-    - role: rbenv-rubies
-    - role: vim-vundle-plugins
-    - role: osx-updates
-      become: True
+    - { role: osx-hostname, tags: settings }
+    - { role: ansible-secrets, tags: settings }
+    - { role: development-user, tags: settings }
+    - { role: osx-settings, tags: settings, become: yes }
+    - { role: homebrew }
+    - { role: homebrew-openssl }
+    - { role: dotfiles, tags: settings }
+    - { role: bash-it, tags: settings }
+    - { role: git-pair }
+    - { role: iterm-preferences, tags: settings }
+    - { role: tmux }
+    - { role: rbenv-rubies }
+    - { role: vim-vundle-plugins }
+    - { role: dev-secrets, tags: settings }
+    - { role: workspace-projects }
+    - { role: osx-updates, become: yes }
