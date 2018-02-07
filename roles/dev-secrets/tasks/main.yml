@@ -1,0 +1,6 @@
+---
+- name: 'Ensure the dev secrets exist'
+  include_tasks: secret.yml
+  with_items: "{{ dev_secrets }}"
+  loop_control:
+    loop_var: dev_secret
