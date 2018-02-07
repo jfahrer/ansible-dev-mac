@@ -1,16 +1,17 @@
 ---
-- name: Temporary setting local ruby version to install gems
+- name:  Set local ruby version to install gems
   shell: eval "$(rbenv init -)"; rbenv local {{ ruby_version_for_gem_install }}
   changed_when: false
 
-- name: Installing gems
-  gem: 
+- name: Ensure gems are installed
+  gem:
     name: "{{ item }}"
     state: latest
     user_install: no
     executable: "{{ rbenv_rubies_root }}/shims/gem"
   with_items: "{{ rbenv_rubies_ruby_gems }}"
+  ignore_errors: yes
 
-- name: Unsetting local ruby version
+- name: Unset local ruby version
   shell: eval "$(rbenv init -)"; rbenv local --unset
   changed_when: false
