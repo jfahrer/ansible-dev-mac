@@ -1,0 +1,6 @@
+---
+- name: 'Ensure the workspace direcotory exists'
+  file:
+    path: "{{ workspace }}"
+    state: directory
+    mode: 0755

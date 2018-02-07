@@ -1,0 +1,6 @@
+---
+- name: 'Ensure project exists in the workspace'
+  include_tasks: project.yml
+  with_items: "{{ workspace_projects }}"
+  loop_control:
+    loop_var: project

@@ -1,0 +1,19 @@
+---
+- name: 'Ensure the directory for the project exists'
+  file:
+    path: "{{ workspace }}/{{ project.name }}"
+    state: directory
+    mode: '0755'
+
+- name: "Ensure project {{ project.name }} is cloned"
+  git:
+    repo: "{{ project.repo }}"
+    dest: "{{ workspace }}/{{ project.name }}"
+    update: no
+    accept_hostkey: True
+  register: project_checkout
+
+- name: "Perform after action for {{ project.name }}"
+  shell: >
+    bash -lc 'cd "{{ workspace }}/{{ project.name }}" && {{ project.after_action }}'
+  when: project.after_action is defined and project_checkout.changed
