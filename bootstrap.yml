@@ -1,12 +1,18 @@
 ---
+- name: 'Setup workspace and load secrets'
+  hosts: localhost
+  roles:
+    - role: ansible-secrets
+
 - name: 'Bootstraping a new box'
-  vars_files:
-    - ../ansible-dev-mac-credentials/github.yml
   hosts: host-to-bootstrap
+  vars:
+    github_ssh_key_management_token: "{{ hostvars['localhost']['github_ssh_key_management_token'] }}"
   roles:
     - role: osx-hostname
       become: yes
     - role: development-user
     - role: elliotweiser.osx-command-line-tools
-    - role: ansible-repos
     - role: homebrew
+    - role: ansible-secrets
+    - role: ansible-dev-mac-repo
