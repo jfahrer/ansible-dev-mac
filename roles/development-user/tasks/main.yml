@@ -13,15 +13,14 @@
     name: "{{ development_user }}"
     generate_ssh_key: yes
 
-- name: Ensure that the workspace directory exists
-  file:
-    state: directory
-    dest: "{{ development_user_home_dir }}/workspace"
-    owner: "{{ development_user }}"
-
 - name: Read SSH public key to authorize
   shell: "cat {{ development_user_home_dir }}/.ssh/id_rsa.pub"
   register: ssh_pub_key
+
+- name: Test if the token for managing ssh keys on GitHub is set
+  fail:
+    msg: "Make sure to define github_ssh_key_management_token in your secrets"
+  when: github_ssh_key_management_token is not defined
 
 - name: Authorize the user's to access GitHub
   github_key:
