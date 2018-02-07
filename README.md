@@ -9,6 +9,11 @@ New machines can be bootstrapped over ssh with a separate playbook.
 cd ~/workspace/ansible-dev-mac && ansible-playbook -K --limit $(hostname) dev-mac.yml
 ```
 
+#### Update settings and secrets only
+```sh
+cd ~/workspace/ansible-dev-mac && ansible-playbook -K --limit $(hostname) --tags settings dev-mac.yml
+```
+
 ## Adding hosts
 Add the new host to the inventory. You should use whatever `hostname` returns for your machine as the name in the inventory. Ansible will talk to the host via a `local` connection. Also make sure to set the `osx_hostname` variable in the host specific vars files. Otherwise we will set the hostname of the machine to whatever `inventory_hostname` returns.
 
@@ -16,9 +21,10 @@ Add the new host to the inventory. You should use whatever `hostname` returns fo
 ```sh
 ansible-playbook -k -K -e "bootstrap_ip=10.0.1.24 bootstrap_user=julian osx_hostname=julians-wanelobook" bootstrap.yml
 ```
-This will install Xcode, Homebrew and Ansible on a blank machine. It also generates ssh keys, clones the Ansible and credentials repos and copies the vault key over to the machine.
+This will install Xcode, Homebrew and Ansible on a blank machine. It also generates ssh keys, clones the Ansible and secrets repos and copies the vault key over to the machine.
 
-You can override the credentials repo that will be used with `-e "ansible_repos_credential_repo_url=ssh://git@github.com/jfahrer/ansible-dev-mac-credentials.git"`
+You can override the secrets repo that will be used with `-e "ansible_repos_credential_repo_url=ssh://git@github.com/jfahrer/ansible-dev-mac-secrets.git"`
+You can set `ansible_repos_vault_password_file` to use a custom file for the vault password that will transferred to the host.
 
 ### Manually setting up a new machine
 * Install Homebrew
@@ -30,8 +36,8 @@ You can override the credentials repo that will be used with `-e "ansible_repos_
 * Clone the repo
   `git clone https://github.com/jfahrer/ansible-dev-mac`
 
-* Clone the credentials repo
-  `git clone https://github.com/jfahrer/ansible-dev-mac-credentials`
+* Clone the secrets repo
+  `git clone https://github.com/jfahrer/ansible-dev-mac-secrets`
 
 * Setup the vault password
   `cd ansible-dev-mac && echo WHATEVER_THE_VAULT_KEY_IS > vault_password.txt`
