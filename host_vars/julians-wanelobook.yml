@@ -6,8 +6,8 @@ rbenv_rubies_global_ruby_version: 2.3.1
 dev_secrets:
   - { name: wanelo.pem, identifier: dev_secrets_wanelo_pem, mode: "0600", file: "/Users/{{ ansible_user_id }}/.ssh/wanelo.pem" }
   - { name: wanelo_joyent, identifier: dev_secrets_wanelo_joyent, mode: "0600", file: "/Users/{{ ansible_user_id }}/.wanelo_joyent" }
-  - { name: id_rsa_wanelo, identifier: dev_secrets_wanelo_is_rsa, mode: "0600", file: "/Users/{{ ansible_user_id }}/.ssh/id_rsa_wanelo" }
-  - { name: id_rsa_wanelo_pub, identifier: dev_secrets_wanelo_is_rsa_pub, mode: "0600", file: "/Users/{{ ansible_user_id }}/.ssh/id_rsa_wanelo.pub" }
+  - { name: id_rsa_wanelo, identifier: dev_secrets_wanelo_id_rsa, mode: "0600", file: "/Users/{{ ansible_user_id }}/.ssh/id_rsa_wanelo" }
+  - { name: id_rsa_wanelo_pub, identifier: dev_secrets_wanelo_id_rsa_pub, mode: "0600", file: "/Users/{{ ansible_user_id }}/.ssh/id_rsa_wanelo.pub" }
 workspace_projects:
   - { repo: 'git@github.com:wanelo/ruby-web', name: 'ruby-web' }
   - { repo: 'git@github.com:wanelo/r2feed2', name: 'r2feed2' }
