@@ -56,7 +56,9 @@ homebrew_cask_apps:
   - 'slack'
   - 'seafile-client'
   - 'sublime-text'
+  - 'switchresx'
   - 'teamviewer'
+  - 'tunnelblick'
   - 'vmware-fusion'
 
 rbenv_rubies_ruby_versions:
