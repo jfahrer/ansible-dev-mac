@@ -1,6 +1,0 @@
----
-- name: 'Ensure that the homebrew openssl is linked'
-  shell: >
-    brew link openssl --force
-  register: openssl_link_result
-  changed_when: openssl_link_result.stdout.find('Already linked:') != -1

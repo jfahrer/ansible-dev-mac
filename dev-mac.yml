@@ -9,7 +9,6 @@
     - { role: development-user, tags: settings }
     - { role: osx-settings, tags: settings, become: yes }
     - { role: homebrew }
-    - { role: homebrew-openssl }
     - { role: dotfiles, tags: settings }
     - { role: bash-it, tags: settings }
     - { role: git-pair }
