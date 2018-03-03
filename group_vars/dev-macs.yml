@@ -72,5 +72,6 @@ rbenv_rubies_ruby_gems:
   - 'irbtools'
   - 'awesome_print'
   - 'activesupport'
+  - 'tty-markdown'
 rbenv_rubies_plugins:
  - { name: 'rbenv-ctags', repo: 'https://github.com/tpope/rbenv-ctags' }
