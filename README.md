@@ -56,6 +56,8 @@ You can set `ansible_repos_vault_password_file` to use a custom file for the vau
   * ansible
   * rails
   * ruby
+  * elixir
+  * bootstrap
   * rspec expectations cheat-sheet
 * Sign in to chrome
 * Setup 1password
