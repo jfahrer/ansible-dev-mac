@@ -1,0 +1,28 @@
+---
+- import_tasks: variables.yml
+
+# - name: Ensure the directory for the plugins exists
+#   file:
+#     state: directory
+#     dest: "{{ vim_plug_plugins_path }}"
+#     owner: "{{ vim_plug_user }}"
+#     mode: "{{ vim_plug_plugins_path_mode }}"
+
+- name: Ensure plug is installed and up to date
+  command: "curl -fLo {{ vim_plug_autoload_path }} --create-dirs {{ vim_plug_url }}"
+  args:
+    creates: "{{ vim_plug_autoload_path }}"
+
+- name: Ensure all plugins are installed
+  shell: >
+    {{ vim_plug_vim_binary }} -u "{{ vim_plug_vimrc }}" -c "PlugInstall" -c quitall
+
+- name: Ensure all plugins are up to date
+  shell: >
+    {{ vim_plug_vim_binary }} -u "{{ vim_plug_vimrc }}" -c "PlugUpdate" -c quitall
+  when: vim_plug_perform_update
+
+- name: Ensure that old plugins are removed
+  shell: >
+    {{ vim_plug_vim_binary }} -u "{{ vim_plug_vimrc }}" -c "PlugClean!" -c quitall
+  when: vim_plug_perform_clean

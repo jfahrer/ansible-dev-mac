@@ -15,7 +15,7 @@
     - { role: iterm-preferences, tags: settings }
     - { role: tmux }
     - { role: rbenv-rubies }
-    - { role: vim-vundle-plugins }
+    - { role: vim-plug }
     - { role: dev-secrets, tags: settings }
     - { role: workspace-projects }
     - { role: osx-updates, become: yes }

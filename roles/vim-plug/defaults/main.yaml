@@ -1,0 +1,7 @@
+__vim_plug_user: "{{ ansible_user_id }}"
+vim_plug_url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim_plug_perform_update: True
+vim_plug_perform_clean: True
+vim_plug_vim_binary: vim
+vim_plug_plugins_path_mode: 0755
+_vim_plug_vimrc_file_name: .vimrc

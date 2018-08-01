@@ -75,3 +75,5 @@ rbenv_rubies_ruby_gems:
   - 'tty-markdown'
 rbenv_rubies_plugins:
  - { name: 'rbenv-ctags', repo: 'https://github.com/tpope/rbenv-ctags' }
+
+vim_plug_vimrc_file_name: .vimrc.plugins
