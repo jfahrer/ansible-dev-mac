@@ -1,4 +1,5 @@
 osx_hostname: julians-hoverbook
 rbenv_rubies_ruby_versions:
   - 2.5.1
+  - 2.3.3
 rbenv_rubies_global_ruby_version: 2.5.1

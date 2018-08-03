@@ -14,7 +14,7 @@
     - { role: git-pair }
     - { role: iterm-preferences, tags: settings }
     - { role: tmux }
-    - { role: rbenv-rubies }
+    - { role: rbenv-rubies, tags: ruby }
     - { role: vim-plug }
     - { role: dev-secrets, tags: settings }
     - { role: workspace-projects }
