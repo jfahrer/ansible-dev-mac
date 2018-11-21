@@ -39,6 +39,7 @@ homebrew_apps:
   - 'pcre'
   - 'rcm'
   - 'rbenv'
+  - 'thefuck'
   - 'the_silver_searcher'
   - 'tldr'
   - 'tree'
