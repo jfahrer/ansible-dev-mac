@@ -11,7 +11,7 @@
     - { role: homebrew }
     - { role: dotfiles, tags: settings }
     - { role: bash-it, tags: settings }
-    - { role: git-pair }
+    - { role: dev-utils, tags: utils }
     - { role: iterm-preferences, tags: settings }
     - { role: tmux }
     - { role: rbenv-rubies, tags: ruby }

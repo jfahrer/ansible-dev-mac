@@ -1,7 +1,0 @@
-#!/bin/bash
-if [[ "$1" == "commit" || "$1" == "ci"  ]]; then
-  shift
-  /usr/local/bin/git pair-commit "$@"
-  exit $?
-fi
-/usr/local/bin/git "$@"
