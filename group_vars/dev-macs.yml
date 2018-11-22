@@ -11,8 +11,7 @@ bash_it_plugins:
 bash_it_completions:
   - defaults
   - git
-bash_it_aliases:
-  - general
+bash_it_aliases: []
 bash_it_theme: wanelo
 
 homebrew_taps:
