@@ -17,6 +17,7 @@ bash_it_theme: wanelo
 homebrew_taps:
   - 'homebrew/services'
   - 'thoughtbot/formulae'
+  - 'heroku/brew'
 homebrew_apps:
   - 'ack'
   - 'ansible'
@@ -29,6 +30,7 @@ homebrew_apps:
   - 'docker-completion'
   - 'docker-credential-helper'
   - 'git'
+  - 'heroku'
   - 'hub'
   - 'htop'
   - 'lynx'
