@@ -1,1 +1,6 @@
 osx_hostname: julians-macbookpro
+rbenv_rubies_ruby_versions:
+  - 2.5.1
+  - 2.3.3
+  - 2.2.10
+rbenv_rubies_global_ruby_version: 2.5.1
