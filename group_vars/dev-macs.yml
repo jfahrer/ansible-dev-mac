@@ -58,6 +58,7 @@ homebrew_cask_apps:
   - 'google-drive-file-stream'
   - 'grammarly'
   - 'iterm2'
+  - 'screenflow'
   - 'shiftit'
   - 'skype'
   - 'slack'
