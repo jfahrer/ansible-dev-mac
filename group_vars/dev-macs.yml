@@ -64,6 +64,7 @@ homebrew_cask_apps:
   - 'slack'
   - 'sublime-text'
   - 'switchresx'
+  - 'tableplus'
   - 'teamviewer'
   - 'tunnelblick'
   - 'vmware-fusion'
