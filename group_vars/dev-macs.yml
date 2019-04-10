@@ -41,6 +41,8 @@ homebrew_apps:
   - 'pcre'
   - 'rcm'
   - 'rbenv'
+  - 'terraform'
+  - 'terragrunt'
   - 'thefuck'
   - 'the_silver_searcher'
   - 'tldr'
@@ -50,6 +52,7 @@ homebrew_apps:
 homebrew_cask_apps:
   - '1password'
   - 'alfred'
+  - 'aws-vault'
   - 'dash'
   - 'docker'
   - 'evernote'
