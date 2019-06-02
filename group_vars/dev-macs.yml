@@ -50,6 +50,7 @@ homebrew_apps:
   - 'tree'
   - 'vim'
   - 'watch'
+  - 'yq'
 homebrew_cask_apps:
   - '1password'
   - 'alfred'
