@@ -19,6 +19,11 @@ cd ~/workspace/ansible-dev-mac && ansible-playbook -K --limit $(hostname) --tags
 cd ~/workspace/ansible-dev-mac && ansible-playbook -K --limit $(hostname) --tags ruby dev-mac.yml
 ```
 
+#### Install brew packages and vim plugins
+```sh
+cd ~/workspace/ansible-dev-mac && ansible-playbook -K --limit $(hostname) --tags software dev-mac.yml
+```
+
 ## Adding hosts
 Add the new host to the inventory. You should use whatever `hostname` returns for your machine as the name in the inventory. Ansible will talk to the host via a `local` connection. Also make sure to set the `osx_hostname` variable in the host specific vars files. Otherwise we will set the hostname of the machine to whatever `inventory_hostname` returns.
 

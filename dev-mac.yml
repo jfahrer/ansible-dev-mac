@@ -8,14 +8,14 @@
     - { role: ansible-secrets, tags: settings }
     - { role: development-user, tags: settings }
     - { role: osx-settings, tags: settings, become: yes }
-    - { role: homebrew }
+    - { role: homebrew, tags: software }
     - { role: dotfiles, tags: settings }
     - { role: bash-it, tags: settings }
     - { role: dev-utils, tags: utils }
     - { role: iterm-preferences, tags: settings }
     - { role: tmux }
     - { role: rbenv-rubies, tags: ruby }
-    - { role: vim-plug }
+    - { role: vim-plug, tags: software }
     - { role: dev-secrets, tags: settings }
     - { role: workspace-projects }
     - { role: osx-updates, become: yes }
