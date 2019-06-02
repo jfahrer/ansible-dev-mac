@@ -21,6 +21,7 @@ homebrew_taps:
 homebrew_apps:
   - 'ack'
   - 'ansible'
+  - 'awscli'
   - 'bash-completion'
   - 'bat'
   - 'ctags'
