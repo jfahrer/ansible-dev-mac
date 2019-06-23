@@ -43,6 +43,7 @@ homebrew_apps:
   - 'pcre'
   - 'rcm'
   - 'rbenv'
+  - 'telnet'
   - 'terraform'
   - 'terragrunt'
   - 'thefuck'
