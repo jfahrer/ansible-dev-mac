@@ -30,6 +30,7 @@ homebrew_apps:
   - 'docker-compose-completion'
   - 'docker-completion'
   - 'docker-credential-helper'
+  - 'go'
   - 'git'
   - 'heroku'
   - 'hub'
