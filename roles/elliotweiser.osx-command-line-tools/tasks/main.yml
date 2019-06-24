@@ -40,11 +40,16 @@
 
 - name: Check for Command Line Tools in Software Update list
   shell: >
+    set -o pipefail;
     softwareupdate -l |
     grep -B 1 -E 'Command Line Tools' |
     awk -F'*' '/^ +\*/ {print $2}' |
     sed 's/^ *//' |
+    grep -iE '[0-9|.]' |
+    sort |
     tail -n1
+  args:
+    executable: /bin/bash
   register: su_list
   when: pkg_info.rc != 0 or compiler.rc != 0 or not clt.stat.exists
   changed_when: false
@@ -55,3 +60,7 @@
   when: pkg_info.rc != 0 or compiler.rc != 0 or not clt.stat.exists
   notify:
     - Cleanup
+  register: su_result
+  failed_when: >-
+    su_result.rc != 0 or
+    'Error installing updates.' in su_result.stdout
