@@ -4,7 +4,7 @@
 # On Sierra this requires ~/.pydistutils.cfg to be configured to
 # install libs to ~/Library/Python/$py_version_short/lib/python/site-packages
 - name: Install biplist
-  env:
+  environment:
     PATH: /usr/bin:/bin:/usr/sbin:/sbin
   easy_install:
     name: biplist
