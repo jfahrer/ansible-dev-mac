@@ -77,9 +77,10 @@ homebrew_cask_apps:
   - 'vmware-fusion'
 
 rbenv_rubies_ruby_versions:
-  - 2.5.1
+  - 2.6.3
+  - 2.5.3
   - 2.3.3
-rbenv_rubies_global_ruby_version: 2.5.1
+rbenv_rubies_global_ruby_version: 2.6.3
 rbenv_rubies_ruby_gems:
   - 'gem-ctags'
   - 'bundler'
