@@ -59,7 +59,6 @@ homebrew_cask_apps:
   - 'aws-vault'
   - 'dash'
   - 'docker'
-  - 'evernote'
   - 'firefox'
   - 'google-chrome'
   - 'google-drive-file-stream'

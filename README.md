@@ -72,7 +72,7 @@ You can set `ansible_repos_vault_password_file` to use a custom file for the vau
 * Sign in to chrome
 * Setup 1password
 * Enable shiftit
-* Install Todoist, Shush and Healthier from the AppStore
+* Install Todoist, Bear, Shush and Healthier from the AppStore
 
 
 ## Installing requirements
