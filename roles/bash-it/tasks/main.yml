@@ -46,7 +46,6 @@
 - name: 'Ensure correct permissions for bash-it'
   file:
     path: "{{ bash_it_path }}"
-    mode: "{{ bash_it_dir_mode }}"
     owner: "{{ bash_it_user }}"
     recurse: True
 
