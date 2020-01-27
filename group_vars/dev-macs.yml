@@ -15,7 +15,8 @@ bash_it_aliases: []
 bash_it_theme: wanelo
 
 homebrew_taps:
-  - 'coderesh-io/cli'
+  - 'codetales/tap'
+  - 'codefresh-io/cli'
   - 'heroku/brew'
   - 'homebrew/services'
   - 'thoughtbot/formulae'
@@ -32,6 +33,7 @@ homebrew_apps:
   - 'docker-compose-completion'
   - 'docker-credential-helper'
   - 'docker-machine-completion'
+  - 'donner'
   - 'git'
   - 'go'
   - 'heroku'
