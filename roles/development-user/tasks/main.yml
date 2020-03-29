@@ -25,7 +25,7 @@
 
 - name: Authorize the user's to access GitHub
   github_key:
-    name: "Access key for {{ development_user }}@{{ ansible_hostname }}"
+    name: "Access key for {{ development_user }}@{{ osx_hostname }}"
     force: yes
     token: "{{ github_ssh_key_management_token }}"
     pubkey: "{{ ssh_pub_key.stdout }}"
