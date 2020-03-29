@@ -2,6 +2,8 @@
 ansible_host: "{{ bootstrap_ip }}"
 ansible_ssh_user: "{{ bootstrap_user }}"
 
+ansible_secrets_load: no
+
 homebrew_apps:
   - ansible
   - python

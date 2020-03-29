@@ -15,3 +15,4 @@
 - name: 'Ensure that secrets are loaded'
   include_vars:
     dir: "{{ ansible_secrets_path }}/vars"
+  when: ansible_secrets_load

@@ -1,2 +1,3 @@
 ---
 ansible_secrets_repo: git@github.com:jfahrer/ansible-dev-mac-secrets.git
+ansible_secrets_load: yes
