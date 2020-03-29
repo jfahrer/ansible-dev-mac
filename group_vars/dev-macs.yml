@@ -23,11 +23,11 @@ homebrew_taps:
 homebrew_apps:
   - 'ack'
   - 'ansible'
+  - 'aptible'
   - 'awscli'
   - 'bash-completion'
   - 'bat'
   - 'cmake'
-  - 'codefresh'
   - 'ctags'
   - 'docker-completion'
   - 'docker-compose-completion'
@@ -49,19 +49,14 @@ homebrew_apps:
   - 'rbenv'
   - 'rcm'
   - 'telnet'
-  - 'terraform'
-  - 'terragrunt'
   - 'the_silver_searcher'
-  - 'thefuck'
   - 'tldr'
   - 'tree'
   - 'vim'
   - 'watch'
-  - 'yq'
 homebrew_cask_apps:
   - '1password'
   - 'alfred'
-  - 'aws-vault'
   - 'brave-browser'
   - 'dash'
   - 'docker'
@@ -70,22 +65,21 @@ homebrew_cask_apps:
   - 'google-drive-file-stream'
   - 'grammarly'
   - 'iterm2'
+  - 'screen'
   - 'screenflow'
   - 'shiftit'
-  - 'skype'
   - 'slack'
   - 'sublime-text'
   - 'switchresx'
-  - 'tableplus'
   - 'teamviewer'
   - 'tunnelblick'
+  - 'visual-studio-code'
   - 'vmware-fusion'
 
 rbenv_rubies_ruby_versions:
+  - 2.7.0
   - 2.6.3
-  - 2.5.3
-  - 2.3.3
-rbenv_rubies_global_ruby_version: 2.6.3
+rbenv_rubies_global_ruby_version: 2.7.0
 rbenv_rubies_ruby_gems:
   - 'gem-ctags'
   - 'bundler'
