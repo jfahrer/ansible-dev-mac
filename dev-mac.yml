@@ -14,7 +14,6 @@
     - { role: dev-utils, tags: utils }
     - { role: iterm-preferences, tags: settings }
     - { role: tmux }
-    - { role: rbenv-rubies, tags: ruby }
     - { role: vim-plug, tags: software }
     - { role: dev-secrets, tags: settings }
     - { role: workspace-projects }
