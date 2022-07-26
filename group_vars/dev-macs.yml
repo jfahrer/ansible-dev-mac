@@ -19,6 +19,7 @@ homebrew_taps:
   - 'git-duet/tap'
   - 'heroku/brew'
   - 'homebrew/services'
+  - 'homebrew/cask-fonts'
   - 'thoughtbot/formulae'
 homebrew_apps:
   - 'ack'
@@ -63,6 +64,7 @@ homebrew_cask_apps:
   - 'dash'
   - 'docker'
   - 'firefox'
+  - 'font-dejavu-sans-mono-nerd-font'
   - 'google-chrome'
   - 'google-drive-file-stream'
   - 'grammarly'
