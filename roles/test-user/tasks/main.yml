@@ -1,5 +1,0 @@
----
-
-- name: Create a test user
-  user:
-    - name: julian
