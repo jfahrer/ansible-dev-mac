@@ -55,23 +55,23 @@
     dest: "{{ bash_it_homedir }}/.bash_it_profile"
     owner: "{{ bash_it_user }}"
 
-- name: "Ensure that .bash_profile sources .bashrc"
-  blockinfile:
-    dest: "{{ bash_it_homedir }}/.bash_profile"
-    create: True
-    follow: True
-    owner: "{{ bash_it_user }}"
-    block: |
-      if [ -f ~/.bashrc ]; then
-        . ~/.bashrc
-      fi
-  when: bash_it_source_bashrc
+# - name: "Ensure that .bash_profile sources .bashrc"
+#   blockinfile:
+#     dest: "{{ bash_it_homedir }}/.bash_profile"
+#     create: True
+#     follow: True
+#     owner: "{{ bash_it_user }}"
+#     block: |
+#       if [ -f ~/.bashrc ]; then
+#         . ~/.bashrc
+#       fi
+#   when: bash_it_source_bashrc
 
-- name: 'Ensure bash_it_profile is loaded from bash_profile'
-  lineinfile:
-    create: True
-    follow: True
-    owner: "{{ bash_it_user }}"
-    dest: "{{ bash_it_homedir }}/.bash_profile"
-    line: ". ~/.bash_it_profile"
-    regexp: ". ~/.bash_it_profile"
+# - name: 'Ensure bash_it_profile is loaded from bash_profile'
+#   lineinfile:
+#     create: True
+#     follow: True
+#     owner: "{{ bash_it_user }}"
+#     dest: "{{ bash_it_homedir }}/.bash_profile"
+#     line: ". ~/.bash_it_profile"
+#     regexp: ". ~/.bash_it_profile"

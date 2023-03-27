@@ -1,6 +1,4 @@
 ---
-- import_tasks: install-homebrew.yml
-- import_tasks: install-cask.yml
 - import_tasks: setup-taps.yml
 - import_tasks: install-apps.yml
 - import_tasks: install-cask-apps.yml

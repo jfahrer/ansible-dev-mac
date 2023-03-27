@@ -38,7 +38,7 @@ You can set `ansible_repos_vault_password_file` to use a custom file for the vau
 
 ### Manually setting up a new machine
 * Install Homebrew
-  `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+  `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)`
 
 * Install ansible
   `brew install ansible`

@@ -4,17 +4,17 @@
   environment:
     PATH: /usr/local/opt/python/libexec/bin:/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
   roles:
-    - { role: osx-hostname, tags: settings }
-    - { role: ansible-secrets, tags: settings }
-    - { role: development-user, tags: settings }
-    - { role: osx-settings, tags: settings, become: yes }
-    - { role: homebrew, tags: software }
-    - { role: dotfiles, tags: settings }
+    # - { role: osx-hostname, tags: settings }
+    # - { role: ansible-secrets, tags: settings }
+    # - { role: development-user, tags: settings }
+    # - { role: osx-settings, tags: settings, become: yes }
+    # - { role: homebrew, tags: software }
+    # - { role: dotfiles, tags: settings }
     - { role: bash-it, tags: settings }
-    - { role: dev-utils, tags: utils }
+    # - { role: dev-utils, tags: utils }
     - { role: iterm-preferences, tags: settings }
-    - { role: tmux }
-    - { role: vim-plug, tags: software }
-    - { role: dev-secrets, tags: settings }
-    - { role: workspace-projects }
-    - { role: osx-updates, become: yes }
+    # - { role: tmux }
+    # - { role: vim-plug, tags: software }
+    # - { role: dev-secrets, tags: settings }
+    # - { role: workspace-projects }
+    # - { role: osx-updates, become: yes }

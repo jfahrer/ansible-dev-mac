@@ -1,6 +1,6 @@
 ---
 ansible_connection: local
-ansible_python_interpreter: /usr/local/opt/python/libexec/bin/python
+ansible_python_interpreter: /opt/homebrew/opt/python/libexec/bin/python
 
 bash_it_plugins:
   - alias-completion
@@ -14,27 +14,20 @@ bash_it_aliases: []
 bash_it_theme: wanelo
 
 homebrew_taps:
-  - 'codefresh-io/cli'
   - 'codetales/tap'
   - 'git-duet/tap'
   - 'heroku/brew'
-  - 'homebrew/services'
   - 'homebrew/cask-fonts'
-  - 'thoughtbot/formulae'
 homebrew_apps:
   - 'ack'
   - 'ansible'
   - 'asdf'
-  - 'awscli'
   - 'bash-completion'
-  - 'bat'
   - 'cmake'
-  - 'ctags'
   - 'docker-completion'
-  - 'docker-compose-completion'
   - 'docker-credential-helper'
-  - 'docker-machine-completion'
   - 'donner'
+  - 'gh'
   - 'git'
   - 'git-duet'
   - 'go'
@@ -42,14 +35,16 @@ homebrew_apps:
   - 'heroku'
   - 'htop'
   - 'hub'
+  - 'libpq'
   - 'lynx'
   - 'mas'
   - 'moreutils'
+  - 'neovim'
   - 'nmap'
   - 'p7zip'
   - 'pcre'
-  - 'postgres'
   - 'rcm'
+  - 'ripgrep'
   - 'telnet'
   - 'the_silver_searcher'
   - 'tldr'
@@ -58,41 +53,23 @@ homebrew_apps:
   - 'watch'
 homebrew_cask_apps:
   - '1password'
+  - '1password-cli'
   - 'alfred'
-  - 'aptible'
   - 'brave-browser'
   - 'dash'
   - 'docker'
   - 'firefox'
   - 'font-dejavu-sans-mono-nerd-font'
+  - 'font-fira-code-nerd-font'
+  - 'font-jetbrains-mono'
   - 'google-chrome'
   - 'google-drive-file-stream'
   - 'grammarly'
   - 'iterm2'
-  - 'screen'
   - 'screenflow'
   - 'shiftit'
   - 'slack'
   - 'sublime-text'
   - 'switchresx'
-  - 'teamviewer'
-  - 'tunnelblick'
-  - 'visual-studio-code'
-  - 'vmware-fusion'
-
-rbenv_rubies_ruby_versions:
-  - 2.7.0
-  - 2.6.3
-rbenv_rubies_global_ruby_version: 2.7.0
-rbenv_rubies_ruby_gems:
-  - 'gem-ctags'
-  - 'bundler'
-  - 'irbtools'
-  - 'awesome_print'
-  - 'activesupport'
-  - 'tty-markdown'
-rbenv_rubies_plugins:
- - { name: 'rbenv-ctags', repo: 'https://github.com/tpope/rbenv-ctags' }
- - { name: 'rbenv-aliases', repo: 'https://github.com/tpope/rbenv-aliases' }
 
 vim_plug_vimrc_file_name: .vimrc.plugins
