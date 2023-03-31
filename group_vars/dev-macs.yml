@@ -34,7 +34,6 @@ homebrew_apps:
   - 'gpg'
   - 'heroku'
   - 'htop'
-  - 'hub'
   - 'libpq'
   - 'lynx'
   - 'mas'
