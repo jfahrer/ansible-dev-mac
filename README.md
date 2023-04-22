@@ -71,8 +71,8 @@ You can set `ansible_repos_vault_password_file` to use a custom file for the vau
   * rspec expectations cheat-sheet
 * Sign in to chrome
 * Setup 1password
-* Enable shiftit
-* Install Todoist, Bear, Shush and Healthier from the AppStore
+* Enable Shiftit
+* Install Bear and Shush from the AppStore
 
 
 ## Installing requirements
