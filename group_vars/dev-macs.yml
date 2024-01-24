@@ -53,6 +53,7 @@ homebrew_apps:
   - 'tree'
   - 'vim'
   - 'watch'
+  - 'ykman'
 homebrew_cask_apps:
   - '1password'
   - '1password-cli'
@@ -66,6 +67,7 @@ homebrew_cask_apps:
   - 'font-jetbrains-mono'
   - 'google-chrome'
   - 'google-drive-file-stream'
+  - 'gpg-suite-no-mail'
   - 'grammarly'
   - 'iterm2'
   - 'rectangle'
@@ -73,5 +75,6 @@ homebrew_cask_apps:
   - 'slack'
   - 'sublime-text'
   - 'switchresx'
+  - 'yubico-yubikey-manager'
 
 vim_plug_vimrc_file_name: .vimrc.plugins
